@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SARLEM - Jastip Pasar Malam Wanajaya</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -12,9 +11,8 @@
     }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between max-w-md mx-auto shadow-2xl border-x border-slate-200">
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between max-w-md mx-auto shadow-2xl border-x border-slate-200 relative">
 
-  <!-- HEADER -->
   <header class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-5 text-center rounded-b-2xl shadow-lg border-b-2 border-blue-500/30">
     <h1 class="text-3xl font-extrabold tracking-wider text-blue-40">SARLEM</h1>
     <p class="text-xs uppercase font-semibold tracking-widest text-blue-300 mt-1">Pasar Malam Wanajaya</p>
@@ -23,10 +21,8 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main class="p-4 space-y-5 flex-1">
 
-    <!-- SLIDER (3 GAMBAR, DURATION 4 DETIK) -->
     <div class="relative overflow-hidden rounded-xl shadow-md bg-slate-900 h-36">
       <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
         <div class="min-w-full h-full relative">
@@ -42,7 +38,6 @@
           <div class="absolute bottom-2 left-3 text-white text-xs font-bold drop-shadow">Pasar Malam Wanajaya Malam Ini!</div>
         </div>
       </div>
-      <!-- Indicator Dots -->
       <div class="absolute bottom-1.5 right-3 flex space-x-1">
         <span class="dot w-2 h-2 rounded-full bg-white opacity-100 transition"></span>
         <span class="dot w-2 h-2 rounded-full bg-white opacity-40 transition"></span>
@@ -50,7 +45,6 @@
       </div>
     </div>
 
-    <!-- GRID KATEGORI (2 KATEGORI RESPONSIP & CORAK MODERN) -->
     <section class="grid grid-cols-2 gap-3">
       <button onclick="switchCategory('makanan')" id="btn-makanan" class="p-4 rounded-xl bg-slate-900 text-white font-bold text-center border-2 border-blue-500 shadow-md transition-all active:scale-95">
         <div class="text-base tracking-wide uppercase">1. MAKANAN</div>
@@ -62,7 +56,6 @@
       </button>
     </section>
 
-    <!-- MENU LIST (TANPA ICON / GAMBAR) -->
     <section class="bg-white rounded-xl p-4 shadow-sm border border-slate-200">
       <h2 id="category-title" class="font-bold text-slate-900 text-sm mb-3 border-b border-slate-100 pb-2 flex justify-between items-center">
         <span>DAFTAR MAKANAN</span>
@@ -70,35 +63,72 @@
       </h2>
 
       <div id="menu-items-container" class="divide-y divide-slate-100">
-        <!-- Item akan dirender lewat Javascript -->
-      </div>
+        </div>
     </section>
 
   </main>
 
-  <!-- BOTTOM STICKY BAR & FOOTER -->
-  <footer class="sticky bottom-0 bg-white border-t border-slate-200 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] p-4 space-y-3">
-    <!-- Total & Button -->
-    <div class="flex items-center justify-between gap-3">
-      <div>
-        <div class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Total Pesanan</div>
-        <div id="total-price" class="text-xl font-black text-slate-900">Rp 0</div>
+  <footer class="sticky bottom-0 bg-white border-t border-slate-200 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] p-4 space-y-3 z-10">
+    <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 space-y-1 text-xs">
+      <div class="flex justify-between text-slate-600">
+        <span>Subtotal Belanja:</span>
+        <span id="subtotal-price" class="font-semibold">Rp 0</span>
       </div>
-      <button onclick="sendOrderWA()" class="bg-blue-900 hover:bg-blue-950 text-white font-bold px-5 py-3 rounded-xl shadow-lg active:scale-95 transition flex items-center gap-2">
-        <span>Pesan Sekarang</span>
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.097-4.908l.341.202c1.44.854 3.094 1.305 4.781 1.306 5.226 0 9.48-4.254 9.483-9.482.001-2.532-.986-4.912-2.778-6.704-1.791-1.792-4.172-2.78-6.708-2.78-5.228 0-9.481 4.253-9.483 9.482-.001 1.74.472 3.441 1.369 4.966l.22.375-1.071 3.91 3.997-1.048z"/></svg>
+      <div class="flex justify-between text-slate-600">
+        <span>Ongkir Jastip:</span>
+        <span id="ongkir-price" class="font-semibold text-blue-900">Rp 0</span>
+      </div>
+      <div class="flex justify-between text-slate-900 font-extrabold text-sm border-t border-slate-200 pt-1">
+        <span>Total Keseluruhan:</span>
+        <span id="total-price" class="text-blue-900">Rp 0</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between gap-3">
+      <button onclick="openModal()" class="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 px-4 rounded-xl shadow-lg active:scale-95 transition flex items-center justify-center gap-2">
+        <span>Pesan via WhatsApp</span>
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.097-4.908l.341.202c1.44.854 3.094 1.305 4.781 1.306 5.226 0 9.48-4.254 9.483-9.482.001-2.532-.986-4.912-2.778-6.704-1.791-1.792-4.172-2.78-6.708-2.78-5.228 0-9.481 4.253-9.483 9.482-.001 1.74.472 3.441 1.369 4.966l.22.375-1.071 3.91 3.997-1.048z"/></svg>
       </button>
     </div>
 
-    <!-- Credit Footer -->
     <div class="text-center border-t border-slate-100 pt-2">
       <p class="text-[11px] font-semibold text-slate-400">aplikasi ini di buat oleh team bledosss</p>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <div id="order-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl p-5 w-full max-w-sm shadow-2xl space-y-4 border border-slate-200">
+      <div class="flex justify-between items-center border-b pb-2">
+        <h3 class="font-extrabold text-slate-900 text-base">Data Pemesan</h3>
+        <button onclick="closeModal()" class="text-slate-400 font-bold hover:text-slate-600">✕</button>
+      </div>
+      
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemesan <span class="text-red-500">*</span></label>
+          <input type="text" id="buyer-name" placeholder="Masukkan nama Anda" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-800">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Alamat / RT/RW <span class="text-red-500">*</span></label>
+          <textarea id="buyer-address" rows="2" placeholder="Contoh: RT 03/RW 02, Rumah Warna Biru" class="w-full text-sm p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-800"></textarea>
+        </div>
+      </div>
+
+      <div class="flex gap-2 pt-2">
+        <button onclick="closeModal()" class="w-1/3 py-2.5 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl">Batal</button>
+        <button onclick="submitOrderWA()" class="w-2/3 py-2.5 bg-blue-900 hover:bg-blue-950 text-white font-bold text-xs rounded-xl shadow-md">Lanjut ke WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // DATA MENUS (CUMA NAMA & HARGA, TANPA ICON/GAMBAR)
+    // BIAYA ONGKIR JASTIP FIXED
+    const FIX_ONGKIR = 3000;
+
+    // NOMOR WHATSAPP DRIVER / ADMIN (Ganti sesuai nomor Anda)
+    const WA_NUMBER = "6281234567890";
+
+    // DATA MENUS (TANPA GAMBAR/ICON)
     const menus = {
       makanan: [
         { id: 'm1', name: 'Martabak Telur', price: 15000 },
@@ -120,10 +150,7 @@
     };
 
     let currentCategory = 'makanan';
-    let selectedItems = {}; // { id: { name, price, qty, checked } }
-
-    // NUMBER WHATSAPP ADMIN / DRIVER (Ganti dengan nomor WhatsApp Anda)
-    const WA_NUMBER = "6281234567890";
+    let selectedItems = {}; 
 
     // CAROUSEL SLIDER (AUTOMATIC 4 DETIK)
     let currentSlide = 0;
@@ -214,41 +241,79 @@
       calculateTotal();
     }
 
-    // CALCULATE TOTAL
+    // CALCULATE TOTAL & ONGKIR
     function calculateTotal() {
-      let grandTotal = 0;
+      let subtotal = 0;
+      let countActive = 0;
+
       Object.keys(selectedItems).forEach(id => {
         const item = selectedItems[id];
         if (item.checked) {
-          grandTotal += item.price * item.qty;
+          subtotal += item.price * item.qty;
+          countActive++;
         }
       });
+
+      const currentOngkir = countActive > 0 ? FIX_ONGKIR : 0;
+      const grandTotal = subtotal + currentOngkir;
+
+      document.getElementById('subtotal-price').innerText = `Rp ${subtotal.toLocaleString('id-ID')}`;
+      document.getElementById('ongkir-price').innerText = `Rp ${currentOngkir.toLocaleString('id-ID')}`;
       document.getElementById('total-price').innerText = `Rp ${grandTotal.toLocaleString('id-ID')}`;
     }
 
-    // DIRECT REDIRECT TO WHATSAPP
-    function sendOrderWA() {
+    // MODAL CONTROL
+    function openModal() {
       const activeItems = Object.values(selectedItems).filter(item => item.checked);
       if (activeItems.length === 0) {
-        alert("Silakan pilih minimal 1 jajanan/minuman terlebih dahulu!");
+        alert("Silakan centang minimal 1 jajanan atau minuman terlebih dahulu!");
+        return;
+      }
+      document.getElementById('order-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('order-modal').classList.add('hidden');
+    }
+
+    // SUBMIT TO WHATSAPP
+    function submitOrderWA() {
+      const name = document.getElementById('buyer-name').value.trim();
+      const address = document.getElementById('buyer-address').value.trim();
+
+      if (!name) {
+        alert("Mohon isi nama lengkap Anda!");
+        return;
+      }
+      if (!address) {
+        alert("Mohon isi alamat atau RT/RW Anda!");
         return;
       }
 
-      let total = 0;
+      const activeItems = Object.values(selectedItems).filter(item => item.checked);
+      let subtotal = 0;
+
       let text = `*PESANAN JASTIP SARLEM*\n_(Pasar Malam Wanajaya)_\n\n`;
+      text += `👤 *Nama Pemesan:* ${name}\n`;
+      text += `📍 *Alamat / RT-RW:* ${address}\n\n`;
       text += `*Daftar Titipan:*\n`;
 
       activeItems.forEach((item, index) => {
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-        text += `${index + 1}. ${item.name} (${item.qty}x) = Rp ${subtotal.toLocaleString('id-ID')}\n`;
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        text += `${index + 1}. ${item.name} (${item.qty}x) = Rp ${itemTotal.toLocaleString('id-ID')}\n`;
       });
 
-      text += `\n*Total Harga:* Rp ${total.toLocaleString('id-ID')}\n`;
-      text += `\n_Mohon diproses min, terima kasih!_`;
+      const grandTotal = subtotal + FIX_ONGKIR;
+
+      text += `\n*Subtotal Belanja:* Rp ${subtotal.toLocaleString('id-ID')}\n`;
+      text += `*Ongkir Jastip:* Rp ${FIX_ONGKIR.toLocaleString('id-ID')}\n`;
+      text += `*TOTAL BAYAR:* Rp ${grandTotal.toLocaleString('id-ID')}\n\n`;
+      text += `_Mohon diproses min, terima kasih!_`;
 
       const encodedText = encodeURIComponent(text);
       window.open(`https://wa.me/${WA_NUMBER}?text=${encodedText}`, '_blank');
+      closeModal();
     }
 
     // INITIAL RENDER
