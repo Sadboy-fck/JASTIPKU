@@ -28,26 +28,34 @@
 </head>
 <body class="bg-slate-100 text-slate-800 h-full h-[100dvh] w-full flex flex-col max-w-md mx-auto shadow-2xl border-x border-slate-200 relative overflow-hidden select-none">
 
-  <!-- HEADER -->
-  <header class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 text-center rounded-b-xl shadow-md border-b border-blue-500/30 shrink-0">
-    <h1 class="text-lg font-extrabold tracking-wider text-blue-400 leading-none">SARLEM</h1>
-    <p class="text-[9px] uppercase font-semibold tracking-widest text-blue-300 mt-0.5">Pasar Malam Wanajaya</p>
-    
-    <div class="mt-1 flex items-center justify-center gap-1.5">
-      <div class="bg-blue-600/30 backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] text-blue-200 border border-blue-400/30 font-semibold">
-        ⚡ Khusus Malam Selasa
-      </div>
+  <!-- HEADER ELEGAN NIGHT MARKET -->
+  <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white px-4 py-3 text-center rounded-b-2xl shadow-lg border-b border-indigo-500/20 shrink-0 relative overflow-hidden">
+    <!-- Hiasan Cahaya Glow di Header -->
+    <div class="absolute -top-10 -left-10 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
+    <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-amber-500/20 rounded-full blur-2xl"></div>
 
-      <div id="header-status-badge" class="backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] font-bold border flex items-center gap-1 transition-all">
+    <div class="relative z-10">
+      <h1 class="text-xl font-black tracking-wider bg-gradient-to-r from-amber-300 via-orange-400 to-amber-200 bg-clip-text text-transparent leading-none">
+        SARLEM
+      </h1>
+      <p class="text-[9px] uppercase font-bold tracking-widest text-indigo-200 mt-1">Pasar Malam Wanajaya</p>
+      
+      <div class="mt-2 flex items-center justify-center gap-2">
+        <span class="bg-white/10 backdrop-blur-md px-2.5 py-0.5 rounded-full text-[8.5px] text-amber-300 border border-amber-400/30 font-semibold shadow-xs">
+          ⚡ Khusus Malam Selasa
+        </span>
+
+        <div id="header-status-badge" class="backdrop-blur-md px-2.5 py-0.5 rounded-full text-[8.5px] font-bold border flex items-center gap-1 transition-all">
+        </div>
       </div>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="p-3 flex-1 flex flex-col justify-between gap-3 overflow-y-auto custom-scrollbar min-h-0">
+  <main class="p-3 flex-1 flex flex-col justify-between gap-3 overflow-y-auto custom-scrollbar min-h-0 bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100">
 
     <!-- BANNER SLIDER -->
-    <div class="relative overflow-hidden rounded-xl shadow-sm bg-slate-900 h-28 shrink-0">
+    <div class="relative overflow-hidden rounded-2xl shadow-md border border-slate-200/60 bg-slate-900 h-28 shrink-0">
       <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
         <div class="min-w-full h-full relative">
           <img src="https://i.ibb.co.com/DDL5pJvy/327f5d0f-9b93-4122-8ba7-483d1ef97048.png" class="w-full h-full object-cover" alt="Banner 1" />
@@ -60,110 +68,134 @@
         </div>
       </div>
       
-      <div class="absolute bottom-1.5 right-2 flex space-x-1">
+      <div class="absolute bottom-2 right-2.5 flex space-x-1.5 bg-slate-900/40 backdrop-blur-md px-2 py-1 rounded-full border border-white/10">
         <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-100 transition"></span>
         <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
         <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
       </div>
     </div>
 
-    <!-- KOTAK GRID KATEGORI MAKANAN & MINUMAN -->
+    <!-- KOTAK GRID KATEGORI MAKANAN & MINUMAN (DESAIN BARU & MEWAH) -->
     <section class="grid grid-cols-2 gap-3 shrink-0">
-      <!-- Card Makanan -->
-      <div onclick="openMenuModal('makanan')" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-3.5 rounded-2xl shadow-md cursor-pointer border border-blue-500/30 hover:border-blue-500 transition-all active:scale-95 flex flex-col items-center justify-center text-center relative group">
-        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🍱</div>
-        <div class="font-extrabold text-sm tracking-wide text-white">1. MAKANAN</div>
-        <div class="text-[10px] text-blue-300 mt-0.5">Klik untuk lihat menu</div>
-        <div id="badge-makanan" class="mt-1.5 hidden bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+      
+      <!-- Card Makanan (Warm Orange / Food Vibes) -->
+      <div onclick="openMenuModal('makanan')" class="bg-gradient-to-br from-orange-500 to-amber-600 text-white p-4 rounded-2xl shadow-lg shadow-orange-500/20 cursor-pointer border border-orange-400/40 hover:scale-[1.02] active:scale-95 transition-all flex flex-col items-center justify-between text-center relative overflow-hidden group min-h-[120px]">
+        <!-- Background Decor -->
+        <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+        
+        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-white/20 mb-1 group-hover:rotate-6 transition-transform">
+          🍱
+        </div>
+        <div>
+          <div class="font-black text-sm tracking-wide text-white drop-shadow-xs">1. MAKANAN</div>
+          <div class="text-[9.5px] text-orange-100 font-medium mt-0.5">Lihat pilihan menu ➔</div>
+        </div>
+
+        <div id="badge-makanan" class="mt-1 hidden bg-white text-orange-600 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full shadow-md">
           0 Dipilih
         </div>
       </div>
 
-      <!-- Card Minuman -->
-      <div onclick="openMenuModal('minuman')" class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-3.5 rounded-2xl shadow-md cursor-pointer border border-blue-500/30 hover:border-blue-500 transition-all active:scale-95 flex flex-col items-center justify-center text-center relative group">
-        <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧋</div>
-        <div class="font-extrabold text-sm tracking-wide text-white">2. MINUMAN</div>
-        <div class="text-[10px] text-blue-300 mt-0.5">Klik untuk lihat menu</div>
-        <div id="badge-minuman" class="mt-1.5 hidden bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+      <!-- Card Minuman (Fresh Teal/Cyan Vibes) -->
+      <div onclick="openMenuModal('minuman')" class="bg-gradient-to-br from-cyan-600 to-blue-700 text-white p-4 rounded-2xl shadow-lg shadow-cyan-500/20 cursor-pointer border border-cyan-400/40 hover:scale-[1.02] active:scale-95 transition-all flex flex-col items-center justify-between text-center relative overflow-hidden group min-h-[120px]">
+        <!-- Background Decor -->
+        <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform"></div>
+
+        <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl shadow-inner border border-white/20 mb-1 group-hover:-rotate-6 transition-transform">
+          🧋
+        </div>
+        <div>
+          <div class="font-black text-sm tracking-wide text-white drop-shadow-xs">2. MINUMAN</div>
+          <div class="text-[9.5px] text-cyan-100 font-medium mt-0.5">Lihat pilihan menu ➔</div>
+        </div>
+
+        <div id="badge-minuman" class="mt-1 hidden bg-white text-blue-700 text-[9px] font-extrabold px-2.5 py-0.5 rounded-full shadow-md">
           0 Dipilih
         </div>
       </div>
+
     </section>
 
-    <!-- INFORMASI LAYANAN JASTIP -->
-    <section class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-2xl p-3 shadow-md border border-blue-500/20 space-y-2 shrink-0">
-      <div class="flex items-center justify-between border-b border-blue-800/50 pb-1.5">
-        <h3 class="text-[10.5px] font-bold text-blue-300 uppercase tracking-wider flex items-center gap-1.5">
-          <span>📌</span> Informasi Layanan Jastip
+    <!-- INFORMASI LAYANAN JASTIP (CLEAN CARD DESIGN) -->
+    <section class="bg-white rounded-2xl p-3.5 shadow-md border border-slate-200/80 space-y-2.5 shrink-0">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+        <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+          <span class="p-1 bg-amber-100 rounded-lg text-amber-600 text-xs">📌</span> 
+          Informasi Layanan Jastip
         </h3>
         <span id="info-status-tag"></span>
       </div>
       
-      <div class="grid grid-cols-2 gap-2 text-[10px] text-slate-300">
-        <div class="bg-slate-800/60 p-2 rounded-xl border border-slate-700/50">
-          <div class="font-bold text-white mb-0.5">⏰ Jam Order</div>
-          <div class="text-slate-300">17.00 - 21.00 WIB</div>
-          <div class="text-[9px] text-slate-400">(Malam Selasa)</div>
+      <div class="grid grid-cols-2 gap-2 text-[10px]">
+        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200/60">
+          <div class="font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+            <span>⏰</span> Jam Order
+          </div>
+          <div class="text-slate-600 font-semibold">17.00 - 21.00 WIB</div>
+          <div class="text-[9px] text-slate-400">(Khusus Malam Selasa)</div>
         </div>
-        <div class="bg-slate-800/60 p-2 rounded-xl border border-slate-700/50">
-          <div class="font-bold text-white mb-0.5">💵 Pembayaran</div>
-          <div class="text-slate-300">COD / Bayar Pas</div>
+
+        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200/60">
+          <div class="font-bold text-slate-800 mb-0.5 flex items-center gap-1">
+            <span>💵</span> Pembayaran
+          </div>
+          <div class="text-slate-600 font-semibold">COD / Bayar Pas</div>
           <div class="text-[9px] text-slate-400">(Saat kurir sampai)</div>
         </div>
       </div>
 
-      <div id="info-bottom-note" class="text-[9px] text-center py-1.5 px-2 rounded-xl border font-medium">
+      <div id="info-bottom-note" class="text-[9.5px] text-center py-2 px-2 rounded-xl font-medium shadow-xs">
       </div>
     </section>
 
     <!-- FOOTER -->
     <div class="text-center shrink-0 py-1">
-      <p class="text-[9.5px] font-semibold text-slate-400">aplikasi ini di buat oleh team bledosss</p>
+      <p class="text-[9.5px] font-semibold text-slate-400 tracking-wide">Dibuat dengan ❤️ oleh <span class="text-slate-600 font-bold">Team Bledosss</span></p>
     </div>
 
   </main>
 
-  <!-- BAR CHECKOUT TOTAL & BUTTON WA -->
-  <div id="checkout-bar" class="absolute bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-8px_20px_rgba(0,0,0,0.2)] p-2.5 space-y-1 z-40 hidden transition-all duration-300">
-    <div class="flex items-center justify-between text-[10px] px-1 text-slate-500">
-      <span>Subtotal: <strong id="subtotal-price" class="text-slate-800">Rp 0</strong></span>
-      <span>Ongkir Jastip: <strong id="ongkir-price" class="text-blue-900">Rp 3.000</strong></span>
+  <!-- BAR CHECKOUT TOTAL & BUTTON WA (MODERN BOTTOM SHEET) -->
+  <div id="checkout-bar" class="absolute bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-8px_25px_rgba(0,0,0,0.12)] p-3 space-y-1.5 z-40 hidden transition-all duration-300">
+    <div class="flex items-center justify-between text-[10.5px] px-1 text-slate-500">
+      <span>Subtotal: <strong id="subtotal-price" class="text-slate-800 font-bold">Rp 0</strong></span>
+      <span>Ongkir Jastip: <strong id="ongkir-price" class="text-orange-600 font-bold">Rp 3.000</strong></span>
     </div>
 
-    <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
+    <div class="flex items-center justify-between gap-3 pt-1.5 border-t border-slate-100">
       <div>
         <div class="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Total Bayar</div>
-        <div id="total-price" class="text-sm font-black text-blue-900">Rp 0</div>
+        <div id="total-price" class="text-base font-black text-slate-900 leading-none">Rp 0</div>
       </div>
-      <button onclick="openOrderModal()" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-2 px-3 rounded-xl shadow-md active:scale-95 transition flex items-center gap-1.5 text-xs">
+      <button onclick="openOrderModal()" class="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-extrabold py-2.5 px-4 rounded-xl shadow-lg shadow-emerald-600/20 active:scale-95 transition flex items-center gap-2 text-xs tracking-wide">
         <span>Pesan via WhatsApp</span>
-        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.097-4.908l.341.202c1.44.854 3.094 1.305 4.781 1.306 5.226 0 9.48-4.254 9.483-9.482.001-2.532-.986-4.912-2.778-6.704-1.791-1.792-4.172-2.78-6.708-2.78-5.228 0-9.481 4.253-9.483 9.482-.001 1.74.472 3.441 1.369 4.966l.22.375-1.071 3.91 3.997-1.048z"/></svg>
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.097-4.908l.341.202c1.44.854 3.094 1.305 4.781 1.306 5.226 0 9.48-4.254 9.483-9.482.001-2.532-.986-4.912-2.778-6.704-1.791-1.792-4.172-2.78-6.708-2.78-5.228 0-9.481 4.253-9.483 9.482-.001 1.74.472 3.441 1.369 4.966l.22.375-1.071 3.91 3.997-1.048z"/></svg>
       </button>
     </div>
   </div>
 
   <!-- POPUP MODAL DAFTAR PRODUK (MAKANAN / MINUMAN) -->
-  <div id="menu-modal" class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-3 hidden">
-    <div class="bg-white rounded-2xl w-full max-w-sm max-h-[82vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
+  <div id="menu-modal" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-3.5 hidden">
+    <div class="bg-white rounded-3xl w-full max-w-sm max-h-[82vh] flex flex-col overflow-hidden shadow-2xl border border-slate-100">
       <!-- Modal Header -->
-      <div class="p-3 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white flex justify-between items-center border-b border-blue-500/30">
+      <div class="p-3.5 bg-slate-900 text-white flex justify-between items-center">
         <div>
-          <h3 id="modal-menu-title" class="font-extrabold text-xs tracking-wide">DAFTAR MENU</h3>
-          <p class="text-[9px] text-blue-300">Pilih menu yang ingin dititip</p>
+          <h3 id="modal-menu-title" class="font-extrabold text-xs tracking-wider text-amber-300">DAFTAR MENU</h3>
+          <p class="text-[9.5px] text-slate-300">Pilih menu yang ingin kamu titip</p>
         </div>
-        <button onclick="closeMenuModal()" class="text-slate-300 hover:text-white font-bold text-lg px-2 py-0.5 rounded-lg hover:bg-slate-800 transition">✕</button>
+        <button onclick="closeMenuModal()" class="w-7 h-7 bg-slate-800 text-slate-300 hover:text-white rounded-full font-bold text-xs flex items-center justify-center hover:bg-slate-700 transition">✕</button>
       </div>
       
       <!-- Modal Body (List Items) -->
-      <div id="modal-menu-items" class="p-3 overflow-y-auto space-y-2 flex-1 custom-scrollbar">
+      <div id="modal-menu-items" class="p-3 overflow-y-auto space-y-2 flex-1 custom-scrollbar bg-slate-50">
       </div>
 
       <!-- Modal Footer -->
-      <div class="p-2.5 bg-slate-50 border-t flex justify-between items-center">
-        <div class="text-[10px] text-slate-500 font-semibold" id="modal-selected-summary">
+      <div class="p-3 bg-white border-t border-slate-200/80 flex justify-between items-center">
+        <div class="text-[10.5px] text-slate-600 font-bold" id="modal-selected-summary">
           0 menu dipilih
         </div>
-        <button onclick="closeMenuModal()" class="bg-blue-900 hover:bg-blue-950 text-white px-4 py-1.5 rounded-xl font-bold text-xs shadow transition active:scale-95">
+        <button onclick="closeMenuModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl font-bold text-xs shadow-md transition active:scale-95">
           Selesai Pilih
         </button>
       </div>
@@ -172,31 +204,34 @@
 
   <!-- MODAL FORM PEMESANAN (NAMA & ALAMAT) -->
   <div id="order-modal" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl p-4 w-full max-w-sm shadow-2xl space-y-3 border border-slate-200">
-      <div class="flex justify-between items-center border-b pb-2">
-        <h3 class="font-extrabold text-slate-900 text-xs">Data Pemesan</h3>
-        <button onclick="closeOrderModal()" class="text-slate-400 font-bold hover:text-slate-600">✕</button>
+    <div class="bg-white rounded-3xl p-4.5 w-full max-w-sm shadow-2xl space-y-3.5 border border-slate-100">
+      <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+        <div>
+          <h3 class="font-black text-slate-900 text-xs tracking-wide">Lengkapi Data Pemesan</h3>
+          <p class="text-[9px] text-slate-400">Agar kurir tidak salah kirim alamat</p>
+        </div>
+        <button onclick="closeOrderModal()" class="w-6 h-6 bg-slate-100 text-slate-500 rounded-full font-bold text-xs flex items-center justify-center">✕</button>
       </div>
       
-      <div class="space-y-2.5">
+      <div class="space-y-3">
         <div>
           <label class="block text-[10px] font-bold text-slate-700 mb-1">Nama Pemesan <span class="text-red-500">*</span></label>
-          <input type="text" id="buyer-name" placeholder="Masukkan nama Anda" class="w-full text-xs p-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-800">
+          <input type="text" id="buyer-name" placeholder="Contoh: Budi" class="w-full text-xs p-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition">
         </div>
         <div>
           <label class="block text-[10px] font-bold text-slate-700 mb-1">Alamat / RT/RW <span class="text-red-500">*</span></label>
-          <textarea id="buyer-address" rows="2" placeholder="Contoh: RT 03/RW 02, Rumah Warna Biru" class="w-full text-xs p-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-800"></textarea>
+          <textarea id="buyer-address" rows="2" placeholder="Contoh: Perum Wanajaya Blok C3 No 12 (RT 03/RW 02)" class="w-full text-xs p-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition"></textarea>
         </div>
       </div>
 
       <div class="flex gap-2 pt-1">
-        <button onclick="closeOrderModal()" class="w-1/3 py-2 bg-slate-200 text-slate-700 font-bold text-xs rounded-xl">Batal</button>
-        <button onclick="submitOrderWA()" class="w-2/3 py-2 bg-blue-900 hover:bg-blue-950 text-white font-bold text-xs rounded-xl shadow-md">Lanjut ke WhatsApp</button>
+        <button onclick="closeOrderModal()" class="w-1/3 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition">Batal</button>
+        <button onclick="submitOrderWA()" class="w-2/3 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-emerald-600/20 transition">Kirim ke WhatsApp 🚀</button>
       </div>
     </div>
   </div>
 
-  <!-- SCRIPT LOGIKA APLIKASI -->
+  <!-- SCRIPT LOGIKA APLIKASI UTUH -->
   <script>
     // SETTING STATUS LAYANAN (true = BUKA, false = TUTUP)
     const IS_OPEN = true; 
@@ -204,7 +239,7 @@
     const FIX_ONGKIR = 3000;
     const WA_NUMBER = "6283116586904"; // Nomor WA Admin
 
-    // DAFTAR PRODUK EDITAN ANDA (UTUH 100%)
+    // DAFTAR PRODUK (100% UTUH)
     const menus = {
       makanan: [
         { id: 'm1', name: 'Martabak', price: 7000 },
@@ -241,22 +276,22 @@
       const infoBottomNote = document.getElementById('info-bottom-note');
 
       if (IS_OPEN) {
-        headerBadge.className = "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 px-2 py-0.5 rounded-full text-[8px] font-bold border flex items-center gap-1 shadow-sm";
+        headerBadge.className = "bg-emerald-500/20 text-emerald-300 border-emerald-400/40 px-2.5 py-0.5 rounded-full text-[8.5px] font-bold border flex items-center gap-1 shadow-xs";
         headerBadge.innerHTML = `
           <span class="relative flex h-1.5 w-1.5">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
           </span>
           <span>BUKA</span>
         `;
 
-        infoStatusTag.className = "text-[7.5px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded-full font-semibold border border-emerald-500/30 flex items-center gap-1";
-        infoStatusTag.innerHTML = `<span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span> Buka`;
+        infoStatusTag.className = "text-[8px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold border border-emerald-300 flex items-center gap-1";
+        infoStatusTag.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Buka`;
 
-        infoBottomNote.className = "text-[8.5px] text-center py-1 px-1.5 rounded-lg border border-blue-400/20 bg-blue-900/40 text-slate-200 font-medium";
-        infoBottomNote.innerHTML = `🛵 Kurir siap mengantar langsung ke depan rumah Anda`;
+        infoBottomNote.className = "text-[9.5px] text-center py-2 px-2 rounded-xl bg-amber-50 text-amber-900 border border-amber-200/60 font-medium";
+        infoBottomNote.innerHTML = `🛵 <strong>Kurir Siap Antar:</strong> Makanan siap diantar ke rumahmu!`;
       } else {
-        headerBadge.className = "bg-rose-500/20 text-rose-300 border-rose-500/40 px-2 py-0.5 rounded-full text-[8px] font-bold border flex items-center gap-1 shadow-sm";
+        headerBadge.className = "bg-rose-500/20 text-rose-300 border-rose-400/40 px-2.5 py-0.5 rounded-full text-[8.5px] font-bold border flex items-center gap-1 shadow-xs";
         headerBadge.innerHTML = `
           <span class="relative flex h-1.5 w-1.5">
             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose-500"></span>
@@ -264,11 +299,11 @@
           <span>TUTUP</span>
         `;
 
-        infoStatusTag.className = "text-[7.5px] bg-rose-500/20 text-rose-300 px-1.5 py-0.5 rounded-full font-semibold border border-rose-500/30 flex items-center gap-1";
-        infoStatusTag.innerHTML = `<span class="w-1 h-1 rounded-full bg-rose-400"></span> Tutup`;
+        infoStatusTag.className = "text-[8px] bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full font-bold border border-rose-300 flex items-center gap-1";
+        infoStatusTag.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Tutup`;
 
-        infoBottomNote.className = "text-[8.5px] text-center py-1 px-1.5 rounded-lg border border-rose-400/20 bg-rose-950/40 text-rose-200 font-medium";
-        infoBottomNote.innerHTML = `⚠️ Order tutup. Silakan pesan saat jam operasional kembali buka.`;
+        infoBottomNote.className = "text-[9.5px] text-center py-2 px-2 rounded-xl bg-rose-50 text-rose-900 border border-rose-200/60 font-medium";
+        infoBottomNote.innerHTML = `⚠️ Orderan sedang tutup. Silakan cek kembali saat jam operasional.`;
       }
     }
 
@@ -313,17 +348,17 @@
       container.innerHTML = itemList.map(item => {
         const itemState = selectedItems[item.id] || { checked: false, qty: 1 };
         return `
-          <div class="p-2 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-2 shadow-xs">
+          <div class="p-2.5 bg-white rounded-2xl border border-slate-200/80 flex items-center justify-between gap-2 shadow-xs hover:border-amber-400 transition">
             <div class="flex-1">
               <div class="font-bold text-[11px] text-slate-800 leading-tight">${item.name}</div>
-              <div class="text-[9.5px] font-semibold text-blue-900 mt-0.5">Rp ${item.price.toLocaleString('id-ID')}</div>
+              <div class="text-[9.5px] font-extrabold text-orange-600 mt-0.5">Rp ${item.price.toLocaleString('id-ID')}</div>
             </div>
 
-            <div class="flex items-center gap-1.5">
+            <div class="flex items-center gap-2">
               ${itemState.checked ? `
-                <div class="flex items-center border border-slate-300 rounded-lg overflow-hidden bg-white shadow-xs">
+                <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden bg-slate-50 shadow-inner">
                   <button onclick="updateQty('${item.id}', -1)" class="px-2 py-0.5 text-[11px] font-bold text-slate-700 hover:bg-slate-200 active:bg-slate-300">-</button>
-                  <span class="px-1.5 text-[10px] font-extrabold text-blue-900">${itemState.qty}</span>
+                  <span class="px-1.5 text-[10px] font-black text-slate-800">${itemState.qty}</span>
                   <button onclick="updateQty('${item.id}', 1)" class="px-2 py-0.5 text-[11px] font-bold text-slate-700 hover:bg-slate-200 active:bg-slate-300">+</button>
                 </div>
               ` : ''}
@@ -332,7 +367,7 @@
                      id="chk-${item.id}"
                      ${itemState.checked ? 'checked' : ''} 
                      onchange="toggleCheck('${item.id}', '${item.name}', ${item.price})" 
-                     class="w-4 h-4 accent-blue-900 rounded cursor-pointer">
+                     class="w-4 h-4 accent-amber-500 rounded cursor-pointer">
             </div>
           </div>
         `;
