@@ -29,8 +29,9 @@
 </head>
 <body class="bg-slate-100 text-slate-800 h-full h-[100dvh] w-full flex flex-col max-w-md mx-auto shadow-2xl border-x border-slate-200 relative overflow-hidden select-none">
 
+  <!-- HEADER -->
   <header class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-2.5 text-center rounded-b-xl shadow-md border-b border-blue-500/30 shrink-0">
-    <h1 class="text-lg font-extrabold tracking-wider text-blue-40 leading-none">SARLEM</h1>
+    <h1 class="text-lg font-extrabold tracking-wider text-blue-400 leading-none">SARLEM</h1>
     <p class="text-[9px] uppercase font-semibold tracking-widest text-blue-300 mt-0.5">Pasar Malam Wanajaya</p>
     
     <div class="mt-1 flex items-center justify-center gap-1.5">
@@ -39,33 +40,35 @@
       </div>
 
       <div id="header-status-badge" class="backdrop-blur-md px-2 py-0.5 rounded-full text-[8px] font-bold border flex items-center gap-1 transition-all">
-        </div>
+      </div>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="p-2.5 flex-1 flex flex-col justify-between gap-2 overflow-hidden min-h-0">
 
-<div class="relative overflow-hidden rounded-xl shadow-sm bg-slate-900 h-26 shrink-0">
-  <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
-    <div class="min-w-full h-full relative">
-      <img src="https://i.ibb.co.com/DDL5pJvy/327f5d0f-9b93-4122-8ba7-483d1ef97048.png" class="w-full h-full object-cover" alt="Banner 1" />
+    <!-- BANNER SLIDER -->
+    <div class="relative overflow-hidden rounded-xl shadow-sm bg-slate-900 h-26 shrink-0">
+      <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
+        <div class="min-w-full h-full relative">
+          <img src="https://i.ibb.co.com/DDL5pJvy/327f5d0f-9b93-4122-8ba7-483d1ef97048.png" class="w-full h-full object-cover" alt="Banner 1" />
+        </div>
+        <div class="min-w-full h-full relative">
+          <img src="https://i.ibb.co.com/20Htg5NX/3206083a-e0d8-4838-ba1a-df3c82f3a635.png" class="w-full h-full object-cover" alt="Banner 2" />
+        </div>
+        <div class="min-w-full h-full relative">
+          <img src="https://i.ibb.co.com/39mxJ59V/d5ea840c-cf07-4df3-a97f-4e8e7eef763e.png" class="w-full h-full object-cover" alt="Banner 3" />
+        </div>
+      </div>
+      
+      <div class="absolute bottom-1.5 right-2 flex space-x-1">
+        <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-100 transition"></span>
+        <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
+        <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
+      </div>
     </div>
-    <div class="min-w-full h-full relative">
-      <img src="https://i.ibb.co.com/20Htg5NX/3206083a-e0d8-4838-ba1a-df3c82f3a635.png" class="w-full h-full object-cover" alt="Banner 2" />
-    </div>
-    <div class="min-w-full h-full relative">
-      <img src="https://i.ibb.co.com/39mxJ59V/d5ea840c-cf07-4df3-a97f-4e8e7eef763e.png" class="w-full h-full object-cover" alt="Banner 3" />
-    </div>
-  </div>
-  
-  <div class="absolute bottom-1.5 right-2 flex space-x-1">
-    <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-100 transition"></span>
-    <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
-    <span class="dot w-1.5 h-1.5 rounded-full bg-white opacity-40 transition"></span>
-  </div>
-</div>
 
-
+    <!-- TOMBOL KATEGORI -->
     <section class="grid grid-cols-2 gap-2 shrink-0">
       <button onclick="switchCategory('makanan')" id="btn-makanan" class="p-2 rounded-xl bg-slate-900 text-white font-bold text-center border-2 border-blue-500 shadow-sm transition-all active:scale-95">
         <div class="text-[11px] tracking-wide uppercase leading-tight">1. MAKANAN</div>
@@ -77,6 +80,7 @@
       </button>
     </section>
 
+    <!-- LIST PRODUK -->
     <section class="bg-white rounded-xl p-2.5 shadow-sm border border-slate-200 flex-1 flex flex-col min-h-0 overflow-hidden">
       <h2 id="category-title" class="font-bold text-slate-900 text-[11px] pb-1.5 border-b border-slate-100 flex justify-between items-center shrink-0">
         <span>DAFTAR MAKANAN</span>
@@ -84,43 +88,41 @@
       </h2>
 
       <div id="menu-items-container" class="divide-y divide-slate-100 overflow-y-auto custom-scrollbar scroll-smooth pr-1 flex-1 min-h-0">
-        </div>
+      </div>
     </section>
 
+    <!-- INFORMASI LAYANAN JASTIP -->
     <section class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-xl p-2.5 shadow-md border border-blue-500/20 space-y-1.5 shrink-0">
       <div class="flex items-center justify-between border-b border-blue-800/50 pb-1">
         <h3 class="text-[10px] font-bold text-blue-300 uppercase tracking-wider flex items-center gap-1">
           <span>📌</span> Informasi Layanan Jastip
         </h3>
-        <span id="info-status-tag">
-          </span>
+        <span id="info-status-tag"></span>
       </div>
       
-      <div class="grid grid-cols-2 gap-3 my-4">
-  <div onclick="openModal('makanan')" class="bg-slate-900 text-white p-4 rounded-xl shadow cursor-pointer border border-blue-500/30 hover:border-blue-500 transition active:scale-95">
-    <div class="text-2xl mb-1">🍱</div>
-    <div class="font-bold text-base">1. MAKANAN</div>
-    <div class="text-[11px] text-slate-400">Klik untuk lihat menu</div>
-  </div>
-
-  <div onclick="openModal('minuman')" class="bg-slate-900 text-white p-4 rounded-xl shadow cursor-pointer border border-blue-500/30 hover:border-blue-500 transition active:scale-95">
-    <div class="text-2xl mb-1">🧋</div>
-    <div class="font-bold text-base">2. MINUMAN</div>
-    <div class="text-[11px] text-slate-400">Klik untuk lihat menu</div>
-  </div>
-</div>
-
+      <div class="grid grid-cols-2 gap-2 text-[9px] text-slate-300">
+        <div class="bg-slate-800/60 p-1.5 rounded-lg border border-slate-700/50">
+          <div class="font-bold text-white">⏰ Jam Order</div>
+          <div>17.00 - 21.00 WIB</div>
+        </div>
+        <div class="bg-slate-800/60 p-1.5 rounded-lg border border-slate-700/50">
+          <div class="font-bold text-white">💵 Pembayaran</div>
+          <div>COD / Bayar Pas</div>
+        </div>
+      </div>
 
       <div id="info-bottom-note" class="text-[8.5px] text-center py-1 px-1.5 rounded-lg border font-medium">
-        </div>
+      </div>
     </section>
 
+    <!-- FOOTER -->
     <div class="text-center shrink-0 py-0.5">
       <p class="text-[9px] font-semibold text-slate-400">aplikasi ini di buat oleh team bledosss</p>
     </div>
 
   </main>
 
+  <!-- BAR CHECKOUT TOTAL & BUTTON WA -->
   <div id="checkout-bar" class="absolute bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-8px_20px_rgba(0,0,0,0.2)] p-2.5 space-y-1 z-40 hidden transition-all duration-300">
     <div class="flex items-center justify-between text-[10px] px-1 text-slate-500">
       <span>Subtotal: <strong id="subtotal-price" class="text-slate-800">Rp 0</strong></span>
@@ -139,6 +141,7 @@
     </div>
   </div>
 
+  <!-- MODAL FORM PEMESANAN -->
   <div id="order-modal" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl p-4 w-full max-w-sm shadow-2xl space-y-3 border border-slate-200">
       <div class="flex justify-between items-center border-b pb-2">
@@ -164,42 +167,15 @@
     </div>
   </div>
 
+  <!-- SCRIPT LOGIK APLIKASI -->
   <script>
-
-// Fungsi membuka Modal berdasarkan Kategori
-function openModal(category) {
-  const modal = document.getElementById('productModal');
-  const title = document.getElementById('modalTitle');
-  const container = document.getElementById('modalProductList');
-  
-  title.innerText = category === 'makanan' ? '🍱 DAFTAR MAKANAN' : '🧋 DAFTAR MINUMAN';
-  
-  const items = menus[category] || [];
-  container.innerHTML = items.map(item => `
-    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-200">
-      <div>
-        <div class="font-bold text-slate-800 text-sm">${item.name}</div>
-        <div class="text-xs font-semibold text-blue-600">Rp ${item.price.toLocaleString('id-ID')}</div>
-      </div>
-      <input type="checkbox" onchange="toggleItem('${item.id}', this.checked)" class="w-5 h-5 accent-blue-600 cursor-pointer">
-    </div>
-  `).join('');
-  
-  modal.classList.remove('hidden');
-}
-
-// Fungsi menutup Modal
-function closeModal() {
-  document.getElementById('productModal').classList.add('hidden');
-}
-
-    
     // SETTING STATUS LAYANAN (true = BUKA, false = TUTUP)
     const IS_OPEN = true; 
 
     const FIX_ONGKIR = 3000;
-    const WA_NUMBER = "6283116586904"; // Ganti nomor WA Admin Anda
+    const WA_NUMBER = "6283116586904"; // Nomor WA Admin
 
+    // DAFTAR PRODUK EDITAN ANDA
     const menus = {
       makanan: [
         { id: 'm1', name: 'Martabak', price: 7000 },
@@ -279,7 +255,7 @@ function closeModal() {
       });
     }, 4000);
 
-    // SWITCH CATEGORY
+    // SWITCH CATEGORY (MAKANAN / MINUMAN)
     function switchCategory(cat) {
       currentCategory = cat;
       const btnM = document.getElementById('btn-makanan');
@@ -306,7 +282,7 @@ function closeModal() {
       container.innerHTML = itemList.map(item => {
         const itemState = selectedItems[item.id] || { checked: false, qty: 1 };
         return `
-          <div class="py-1.5 flex items-center justify-between gap-2">
+          <div class="py-1.5 flex items-center justify-between gap-2 border-b border-slate-100 last:border-none">
             <div class="flex-1">
               <div class="font-bold text-[11px] text-slate-800 leading-tight">${item.name}</div>
               <div class="text-[9.5px] font-semibold text-blue-900">Rp ${item.price.toLocaleString('id-ID')}</div>
@@ -385,7 +361,7 @@ function closeModal() {
       document.getElementById('total-price').innerText = `Rp ${grandTotal.toLocaleString('id-ID')}`;
     }
 
-    // MODAL CONTROL
+    // MODAL CONTROL FORM WA
     function openModal() {
       if (!IS_OPEN) {
         alert("Mohon maaf, layanan Jastip SARLEM saat ini sedang TUTUP.\nSilakan lakukan pemesanan saat jam operasional kembali buka.");
@@ -444,22 +420,5 @@ function closeModal() {
     renderStatusBadge();
     renderMenuList();
   </script>
-<div id="productModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-  <div class="bg-white rounded-2xl w-full max-w-md max-h-[80vh] flex flex-col overflow-hidden shadow-2xl">
-    <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
-      <h3 id="modalTitle" class="font-bold text-base tracking-wide">DAFTAR PRODUK</h3>
-      <button onclick="closeModal()" class="text-slate-400 hover:text-white text-2xl font-bold px-2">&times;</button>
-    </div>
-    
-    <div id="modalProductList" class="p-4 overflow-y-auto space-y-3 flex-1">
-      </div>
-
-    <div class="p-3 bg-slate-50 border-t flex justify-end">
-      <button onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold text-sm shadow">Selesai Pilih</button>
-    </div>
-  </div>
-</div>
-
-  
 </body>
 </html>
