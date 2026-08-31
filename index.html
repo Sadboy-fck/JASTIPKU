@@ -96,18 +96,20 @@
           </span>
       </div>
       
-      <div class="grid grid-cols-2 gap-1.5 text-[9px]">
-        <div class="bg-white/10 backdrop-blur-sm p-1.5 rounded-lg border border-white/10">
-          <div class="text-blue-200 font-bold flex items-center gap-1">⏰ Jam Order</div>
-          <div class="font-medium text-slate-100">17.00 - 21.00 WIB</div>
-          <div class="text-[7.5px] text-blue-300">(Malam Selasa)</div>
-        </div>
-        <div class="bg-white/10 backdrop-blur-sm p-1.5 rounded-lg border border-white/10">
-          <div class="text-blue-200 font-bold flex items-center gap-1">💵 Pembayaran</div>
-          <div class="font-medium text-slate-100">COD / Bayar Pas</div>
-          <div class="text-[7.5px] text-blue-300">(Saat kurir sampai)</div>
-        </div>
-      </div>
+      <div class="grid grid-cols-2 gap-3 my-4">
+  <div onclick="openModal('makanan')" class="bg-slate-900 text-white p-4 rounded-xl shadow cursor-pointer border border-blue-500/30 hover:border-blue-500 transition active:scale-95">
+    <div class="text-2xl mb-1">🍱</div>
+    <div class="font-bold text-base">1. MAKANAN</div>
+    <div class="text-[11px] text-slate-400">Klik untuk lihat menu</div>
+  </div>
+
+  <div onclick="openModal('minuman')" class="bg-slate-900 text-white p-4 rounded-xl shadow cursor-pointer border border-blue-500/30 hover:border-blue-500 transition active:scale-95">
+    <div class="text-2xl mb-1">🧋</div>
+    <div class="font-bold text-base">2. MINUMAN</div>
+    <div class="text-[11px] text-slate-400">Klik untuk lihat menu</div>
+  </div>
+</div>
+
 
       <div id="info-bottom-note" class="text-[8.5px] text-center py-1 px-1.5 rounded-lg border font-medium">
         </div>
