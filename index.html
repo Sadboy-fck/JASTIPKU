@@ -415,5 +415,22 @@
     renderStatusBadge();
     renderMenuList();
   </script>
+<div id="productModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl w-full max-w-md max-h-[80vh] flex flex-col overflow-hidden shadow-2xl">
+    <div class="p-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+      <h3 id="modalTitle" class="font-bold text-base tracking-wide">DAFTAR PRODUK</h3>
+      <button onclick="closeModal()" class="text-slate-400 hover:text-white text-2xl font-bold px-2">&times;</button>
+    </div>
+    
+    <div id="modalProductList" class="p-4 overflow-y-auto space-y-3 flex-1">
+      </div>
+
+    <div class="p-3 bg-slate-50 border-t flex justify-end">
+      <button onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold text-sm shadow">Selesai Pilih</button>
+    </div>
+  </div>
+</div>
+
+  
 </body>
 </html>
