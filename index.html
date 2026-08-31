@@ -34,14 +34,14 @@
       </div>
     </div>
 
-    <!-- KOLOM PENCARIAN (SEARCH) -->
+    <!-- KOLOM PENCARIAN -->
     <div class="relative">
       <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="🔍 Cari jajanan (Martabak, Dimsum, Es...)" 
         class="w-full bg-slate-800/80 text-white placeholder-slate-400 text-xs px-3.5 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400 transition">
     </div>
   </header>
 
-  <!-- BANNER SLIDER PROMO -->
+  <!-- BANNER SLIDER PROMO (GANTI LINK IMGBB BANNER DI SINI) -->
   <div class="p-3 pb-1">
     <div class="relative overflow-hidden rounded-2xl shadow-sm bg-slate-900 h-28 border border-slate-200/60">
       <div id="slider" class="flex transition-transform duration-700 ease-in-out h-full">
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <!-- KATEGORI FILTER CHIPS (SCROLLABLE SIDEWAYS) -->
+  <!-- KATEGORI FILTER CHIPS -->
   <div class="px-3 py-2 flex gap-2 overflow-x-auto no-scrollbar sticky top-[105px] bg-slate-100 z-20">
     <button onclick="setCategory('all')" id="tab-all" class="cat-tab bg-slate-900 text-white px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 shadow-sm transition">
       Semua Menu
@@ -79,10 +79,10 @@
     </button>
   </div>
 
-  <!-- SECTION KATALOG PRODUK (FEED LANGSUNG DI HOMEPAGE) -->
+  <!-- SECTION KATALOG PRODUK -->
   <main class="p-3 space-y-4">
     
-    <!-- GRID KATALOG -->
+    <!-- GRID KATALOG PRODUK -->
     <div id="product-grid" class="grid grid-cols-2 gap-2.5">
       <!-- Injected by JavaScript -->
     </div>
@@ -132,7 +132,7 @@
 
   </main>
 
-  <!-- FLOATING BOTTOM CART BAR (MUNCUL OTOMATIS SAAT ADA ORDERAN) -->
+  <!-- FLOATING BOTTOM CART BAR -->
   <div id="cart-bar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-slate-900 text-white p-3 border-t border-slate-800 shadow-[0_-5px_20px_rgba(0,0,0,0.3)] z-40 hidden transition-all">
     <div class="flex items-center justify-between">
       <div>
@@ -180,38 +180,37 @@
   </div>
 
   <script>
-    const IS_OPEN = true; // Flag status buka/tutup
+    const IS_OPEN = true;
     const FIX_ONGKIR = 3000;
     const WA_NUMBER = "6283116586904";
 
-    // DATA PRODUK LENGKAP BERSAMA EMOJI & TAG
+    // GANTI LINK DI PROPERTI 'image' DENGAN LINK DIRECT IMGBB KAMU (CONTOH: https://i.ibb.co/xxxxx/martabak.jpg)
     const products = [
-      { id: 'm1', name: 'Martabak', price: 7000, category: 'makanan', icon: '🥞', bestSeller: true },
-      { id: 'm2', name: 'Baso', price: 10000, category: 'makanan', icon: '🍲', bestSeller: true },
-      { id: 'm3', name: 'Mie ayam', price: 10000, category: 'makanan', icon: '🍜', bestSeller: false },
-      { id: 'm4', name: 'Dimsum', price: 10000, category: 'makanan', icon: '🥟', bestSeller: true },
-      { id: 'm5', name: 'Lekker Manis', price: 5000, category: 'makanan', icon: '🧇', bestSeller: false },
-      { id: 'm6', name: 'Ciken', price: 5000, category: 'makanan', icon: '🍗', bestSeller: false },
-      { id: 'm7', name: 'Takoyaki', price: 5000, category: 'makanan', icon: '🍡', bestSeller: true },
-      { id: 'm8', name: 'Kentang Spiral', price: 5000, category: 'makanan', icon: '🥔', bestSeller: false },
-      { id: 'm9', name: 'Corndog Mozarela', price: 5000, category: 'makanan', icon: '🌭', bestSeller: true },
-      { id: 'm10', name: 'Tahu Crispy', price: 5000, category: 'makanan', icon: '🧆', bestSeller: false },
-      { id: 'm11', name: 'Cilung', price: 5000, category: 'makanan', icon: '🍢', bestSeller: false },
-      { id: 'm12', name: 'Telur Gulung', price: 5000, category: 'makanan', icon: '🍳', bestSeller: true },
+      { id: 'm1', name: 'Martabak', price: 7000, category: 'makanan', image: 'https://i.ibb.co/placeholder/martabak.jpg', bestSeller: true },
+      { id: 'm2', name: 'Baso', price: 10000, category: 'makanan', image: 'https://i.ibb.co/placeholder/baso.jpg', bestSeller: true },
+      { id: 'm3', name: 'Mie ayam', price: 10000, category: 'makanan', image: 'https://i.ibb.co/placeholder/mie-ayam.jpg', bestSeller: false },
+      { id: 'm4', name: 'Dimsum', price: 10000, category: 'makanan', image: 'https://i.ibb.co/placeholder/dimsum.jpg', bestSeller: true },
+      { id: 'm5', name: 'Lekker Manis', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/lekker.jpg', bestSeller: false },
+      { id: 'm6', name: 'Ciken', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/ciken.jpg', bestSeller: false },
+      { id: 'm7', name: 'Takoyaki', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/takoyaki.jpg', bestSeller: true },
+      { id: 'm8', name: 'Kentang Spiral', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/kentang-spiral.jpg', bestSeller: false },
+      { id: 'm9', name: 'Corndog Mozarela', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/corndog.jpg', bestSeller: true },
+      { id: 'm10', name: 'Tahu Crispy', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/tahu-crispy.jpg', bestSeller: false },
+      { id: 'm11', name: 'Cilung', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/cilung.jpg', bestSeller: false },
+      { id: 'm12', name: 'Telur Gulung', price: 5000, category: 'makanan', image: 'https://i.ibb.co/placeholder/telur-gulung.jpg', bestSeller: true },
       
-      { id: 'd1', name: 'Es Poci', price: 5000, category: 'minuman', icon: '🥤', bestSeller: true },
-      { id: 'd2', name: 'Es Duren', price: 10000, category: 'minuman', icon: '🧋', bestSeller: true },
-      { id: 'd3', name: 'Es Pop Ice', price: 5000, category: 'minuman', icon: '🥤', bestSeller: false },
-      { id: 'd4', name: 'Es Campur', price: 10000, category: 'minuman', icon: '🍧', bestSeller: false },
-      { id: 'd5', name: 'Es Kelapa Muda', price: 10000, category: 'minuman', icon: '🥥', bestSeller: false },
-      { id: 'd6', name: 'Air Buah', price: 5000, category: 'minuman', icon: '🍹', bestSeller: false }
+      { id: 'd1', name: 'Es Poci', price: 5000, category: 'minuman', image: 'https://i.ibb.co/placeholder/es-poci.jpg', bestSeller: true },
+      { id: 'd2', name: 'Es Duren', price: 10000, category: 'minuman', image: 'https://i.ibb.co/placeholder/es-duren.jpg', bestSeller: true },
+      { id: 'd3', name: 'Es Pop Ice', price: 5000, category: 'minuman', image: 'https://i.ibb.co/placeholder/es-pop-ice.jpg', bestSeller: false },
+      { id: 'd4', name: 'Es Campur', price: 10000, category: 'minuman', image: 'https://i.ibb.co/placeholder/es-campur.jpg', bestSeller: false },
+      { id: 'd5', name: 'Es Kelapa Muda', price: 10000, category: 'minuman', image: 'https://i.ibb.co/placeholder/es-kelapa-muda.jpg', bestSeller: false },
+      { id: 'd6', name: 'Air Buah', price: 5000, category: 'minuman', image: 'https://i.ibb.co/placeholder/air-buah.jpg', bestSeller: false }
     ];
 
-    let cart = {}; // Store { productId: qty }
-    let customItems = []; // Store request manual
+    let cart = {};
+    let customItems = [];
     let currentCategory = 'all';
 
-    // RENDER BADGE STATUS HAPUS/BUKA
     function renderStatus() {
       const badge = document.getElementById('status-badge');
       if (IS_OPEN) {
@@ -223,7 +222,7 @@
       }
     }
 
-    // RENDER PRODUK KE GRID HOMEPAGE
+    // RENDER GRID PRODUK DENGAN GAMBAR IMGBB
     function renderProducts() {
       const grid = document.getElementById('product-grid');
       const searchQuery = document.getElementById('search-input').value.toLowerCase();
@@ -241,7 +240,7 @@
       if (filtered.length === 0) {
         grid.innerHTML = `
           <div class="col-span-2 text-center py-8 text-slate-400 text-xs font-semibold">
-            jajanan yang kamu cari tidak ditemukan 😢
+            Jajanan yang kamu cari tidak ditemukan 😢
           </div>
         `;
         return;
@@ -250,13 +249,18 @@
       grid.innerHTML = filtered.map(item => {
         const qty = cart[item.id] || 0;
         return `
-          <div class="bg-white rounded-2xl p-3 border border-slate-200/80 shadow-xs flex flex-col justify-between relative overflow-hidden group">
-            ${item.bestSeller ? '<span class="absolute top-2 right-2 text-[8px] bg-amber-100 text-amber-800 font-extrabold px-1.5 py-0.5 rounded-md">🔥 Laris</span>' : ''}
+          <div class="bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-xs flex flex-col justify-between relative overflow-hidden group">
+            ${item.bestSeller ? '<span class="absolute top-2 right-2 text-[8px] bg-amber-400 text-slate-900 font-extrabold px-1.5 py-0.5 rounded-md z-10 shadow-xs">🔥 Laris</span>' : ''}
             
-            <div class="text-center py-2">
-              <div class="text-3xl mb-1 group-hover:scale-110 transition-transform">${item.icon}</div>
-              <div class="font-bold text-xs text-slate-800 leading-tight">${item.name}</div>
-              <div class="text-[11px] font-black text-orange-600 mt-1">Rp ${item.price.toLocaleString('id-ID')}</div>
+            <div>
+              <!-- KOTAK GAMBAR PRODUK -->
+              <div class="w-full h-24 mb-2 rounded-xl overflow-hidden bg-slate-100 relative">
+                <img src="${item.image}" alt="${item.name}" loading="lazy" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/200x200/e2e8f0/475569?text=${encodeURIComponent(item.name)}';">
+              </div>
+              <div class="font-bold text-xs text-slate-800 leading-tight px-0.5">${item.name}</div>
+              <div class="text-[11px] font-black text-orange-600 mt-0.5 px-0.5">Rp ${item.price.toLocaleString('id-ID')}</div>
             </div>
 
             <div class="mt-2 pt-2 border-t border-slate-100">
@@ -277,7 +281,6 @@
       }).join('');
     }
 
-    // UPDATE QTY CART
     function changeQty(id, delta) {
       if (!IS_OPEN) {
         alert("Mohon maaf, layanan Jastip SARLEM saat ini sedang TUTUP.");
@@ -289,7 +292,6 @@
       updateCartBar();
     }
 
-    // SPECIAL FEATURE: ADD CUSTOM ITEM REQUEST
     function addCustomItem() {
       if (!IS_OPEN) {
         alert("Mohon maaf, layanan Jastip SARLEM saat ini sedang TUTUP.");
@@ -321,7 +323,6 @@
       `).join('');
     }
 
-    // FILTER TAB CONTROL
     function setCategory(cat) {
       currentCategory = cat;
       document.querySelectorAll('.cat-tab').forEach(btn => {
@@ -338,7 +339,6 @@
       renderProducts();
     }
 
-    // UPDATE FLOATING BOTTOM BAR
     function updateCartBar() {
       let subtotal = 0;
       let itemCount = 0;
@@ -364,11 +364,9 @@
       }
     }
 
-    // MODAL CONTROL
     function openOrderModal() { document.getElementById('order-modal').classList.remove('hidden'); }
     function closeOrderModal() { document.getElementById('order-modal').classList.add('hidden'); }
 
-    // SUBMIT TO WA
     function submitOrderWA() {
       const name = document.getElementById('buyer-name').value.trim();
       const address = document.getElementById('buyer-address').value.trim();
@@ -412,7 +410,7 @@
       closeOrderModal();
     }
 
-    // CAROUSEL SLIDER AUTO
+    // CAROUSEL BANNER AUTOMATIC
     let currentSlide = 0;
     const slider = document.getElementById('slider');
     const dots = document.querySelectorAll('.dot');
